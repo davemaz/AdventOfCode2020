@@ -14,7 +14,6 @@ namespace AdventOfCode2020
             List<string> input = new List<string>(inputFile.Split(new string[] { "\r\n\r\n" }, StringSplitOptions.RemoveEmptyEntries));
 
             Console.WriteLine($"Sum of any yesses: {GetSumAnyYes(input)}");
-
             Console.WriteLine($"Sum of all yesses: {GetSumAllYes(input)}"); ;
         }
 
@@ -42,10 +41,13 @@ namespace AdventOfCode2020
 
             foreach (var group in input)
             {
+                // Remove blank lines
                 string[] groupForms = group.Split('\n');
+
+                // Sort group answers from shortest to longest 
                 Array.Sort(groupForms, (x, y) => x.Length.CompareTo(y.Length));
 
-                // remove carriage returns
+                // Remove carriage returns
                 for (int i = 0; i < groupForms.Length; i++)
                 {
                     if (groupForms[i].Contains('\r'))
@@ -54,18 +56,19 @@ namespace AdventOfCode2020
                     }
                 }
 
-                foreach (var answer in groupForms[0])
+                foreach (var answer in groupForms[0]) // Only need to check the first form since it is the shortest
                 {
                     int sameAnswer = 0;
                     foreach (var form in groupForms)
                     {
-                        if (form.Contains(answer))
+                        if (!form.Contains(answer))
                         {
-                            sameAnswer++ ;
+                            sameAnswer = 0;
+                            break; // Move to the next answer on this form
                         }
                         else
                         {
-                            sameAnswer = 0;
+                            sameAnswer++;
                         }
                     }
 
