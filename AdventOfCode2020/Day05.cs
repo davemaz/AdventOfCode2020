@@ -95,14 +95,6 @@ namespace AdventOfCode2020
             return seatIds[highestIndex].ToString();
         }
 
-        static void PrintInput(List<string> input)
-        {
-            foreach (var i in input)
-            {
-                Console.WriteLine(i);
-            }
-        }
-
         static void FindMySeat(List<string> input)
         {
             List<int> ids = new List<int>();
