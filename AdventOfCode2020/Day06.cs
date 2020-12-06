@@ -19,7 +19,9 @@ namespace AdventOfCode2020
 
         static int GetGroupTotal(string group)
         {
+            // Remove blank lines
             string clean = group.Replace("\n", "").Replace("\r", "");
+
             char[] answers = clean.Distinct().ToArray();
 
             return answers.Length;
@@ -41,7 +43,7 @@ namespace AdventOfCode2020
 
             foreach (var group in input)
             {
-                // Remove blank lines
+                // Split string on blank lines
                 string[] groupForms = group.Split('\n');
 
                 // Sort group answers from shortest to longest 
