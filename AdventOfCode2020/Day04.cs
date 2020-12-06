@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AdventOfCode2020
 {
-    public class Day05
+    public class Day04
     {
         // https://adventofcode.com/2020/day/5
 
