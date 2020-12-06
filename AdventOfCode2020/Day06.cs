@@ -13,8 +13,8 @@ namespace AdventOfCode2020
             string inputFile = File.ReadAllText(@"input\day06.txt");
             List<string> input = new List<string>(inputFile.Split(new string[] { "\r\n\r\n" }, StringSplitOptions.RemoveEmptyEntries));
 
-            Console.WriteLine($"Sum of any yesses: {GetSumAnyYes(input)}");
-            Console.WriteLine($"Sum of all yesses: {GetSumAllYes(input)}"); ;
+            Console.WriteLine($"Sum of any yes: {GetSumAnyYes(input)}");
+            Console.WriteLine($"Sum of all yesses: {GetSumAllYes(input)}");
         }
 
         static int GetGroupTotal(string group)
